@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#17110d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Market Rivals</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d2b45'/><text x='32' y='44' font-size='34' text-anchor='middle' fill='%23d9b44a' font-family='Arial' font-weight='900'>MR</text></svg>" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "/vendor/three/build/three.module.js",
+          "three/addons/": "/vendor/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="scene"></div>
+
+    <!-- Lobby -->
+    <div id="lobby" class="overlay">
+      <div class="lobby-card">
+        <div class="brand">
+          <div class="logo">MARKET RIVALS</div>
+          <div class="tagline">Competitors vs. Monopolists — a real-estate trading game with two rulebooks</div>
+        </div>
+        <div id="lobby-body"></div>
+      </div>
+    </div>
+
+    <!-- In-game HUD -->
+    <div id="hud" hidden>
+      <header id="topbar">
+        <div class="tb-left">
+          <span class="tb-logo">MARKET RIVALS</span>
+          <span class="chip" id="tb-room"></span>
+          <span class="chip" id="tb-mode"></span>
+          <span class="chip" id="tb-timer" hidden></span>
+        </div>
+        <div class="tb-right">
+          <button class="icon-btn" id="btn-settings" data-ui="settings" title="Settings" aria-label="Settings" aria-haspopup="menu" aria-expanded="false"></button>
+        </div>
+      </header>
+      <aside id="players"></aside>
+      <section id="actionbar"></section>
+      <aside id="sidepanel">
+        <div class="tabs">
+          <button class="tab active" data-tab="log">Game log</button>
+          <button class="tab" data-tab="chat">Chat <span class="badge" id="chat-badge" hidden></span></button>
+          <button class="tab-close" id="log-close" data-ui="log-sheet" aria-label="Close"></button>
+        </div>
+        <div class="tabbody" id="tab-log"></div>
+        <div class="tabbody" id="tab-chat" hidden>
+          <div id="chat-list"></div>
+          <form id="chat-form"><input id="chat-input" maxlength="200" placeholder="Say something…" autocomplete="off" /><button>Send</button></form>
+        </div>
+      </aside>
+      <section id="propspanel" hidden></section>
+      <div id="settings-menu" role="menu" hidden></div>
+      <button id="recenter" data-ui="recenter" hidden></button>
+    </div>
+
+    <div id="modal" class="overlay" hidden><div class="modal-card" id="modal-card"></div></div>
+    <div id="tooltip" hidden></div>
+    <div id="toasts"></div>
+    <div id="conn" hidden>Reconnecting…</div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

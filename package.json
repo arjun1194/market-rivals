@@ -1,0 +1,15 @@
+{
+  "name": "market-rivals",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multiplayer 3D tabletop board game: Competitors vs. Monopolists, with CPU players",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node test/simulate.js"
+  },
+  "dependencies": {
+    "three": "0.170.0",
+    "ws": "8.18.0"
+  }
+}

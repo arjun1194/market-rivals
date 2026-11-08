@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+
+# Reference material from the original game: kept locally, not published
+photos/
+docs/
+*.pdf
+
+# Local tool settings
+.claude/
